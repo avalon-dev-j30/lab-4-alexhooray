@@ -1,8 +1,11 @@
 package ru.avalon.java.udp;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
+import java.net.InetSocketAddress;
 import java.net.SocketAddress;
 
 /**
@@ -35,11 +38,11 @@ public final class UdpSender {
      *
      * @return текстовое сообщение.
      */
-    private static String prepareMessage() {
-        /*
-         * TODO Реализовать метод prepareMessage класса UdpSender
-         */
-        throw new UnsupportedOperationException("Not implemented yet!");
+    private static String prepareMessage() throws IOException {
+        // Реализовать метод prepareMessage класса UdpSender
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Message: ");
+        return reader.readLine();
     }
 
     /**
@@ -48,10 +51,8 @@ public final class UdpSender {
      * @return адрес конечной точки.
      */
     private static SocketAddress prepareAddress() {
-        /*
-         * TODO Реализовать метод prepareAddress класса UdpSender
-         */
-        throw new UnsupportedOperationException("Not implemented yet!");
+        // Реализовать метод prepareAddress класса UdpSender
+        return new InetSocketAddress("127.0.0.1", 8081);
     }
 
     /**
@@ -61,10 +62,8 @@ public final class UdpSender {
      * @throws IOException
      */
     private static DatagramSocket createSocket() throws IOException {
-        /*
-         * TODO Реализовать метод createSocket класса UdpSender
-         */
-        throw new UnsupportedOperationException("Not implemented yet!");
+        // Реализовать метод createSocket класса UdpSender
+        return new DatagramSocket();
     }
 
     /**
@@ -75,10 +74,7 @@ public final class UdpSender {
      * @return экземпляр типа {@link DatagramPacket}.
      */
     private static DatagramPacket pack(String message) {
-        /*
-         * TODO Реализовать метод pack класса UdpSender
-         */
-        throw new UnsupportedOperationException("Not implemented yet!");
+        // Реализовать метод pack класса UdpSender
+        return new DatagramPacket(message.getBytes(), message.getBytes().length);
     }
-
 }
